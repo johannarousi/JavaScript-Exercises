@@ -6,12 +6,12 @@
   <body>
     <h1>JavaScript Practice</h1>
     <script>
-      //   Exercise 1
-      //   var firstName = "Johanna";
-      //   var lastName = "Rousi";
-      //   var isMarried = true;
-      //   var country = "Finland";
-      //   var age = 30;
+      //   Exercise 1 Variable
+      var firstName = "Johanna";
+      var lastName = "Rousi";
+      var isMarried = true;
+      var country = "Finland";
+      var age = 30;
       var firstName = "Johanna",
         lastName = "Rousi",
         isMarried = true,
@@ -24,15 +24,13 @@
       console.log(`I am ${myAge} years old.`);
       console.log(`You are ${yourAge} years old.`);
 
-      console.log(myAge);
-      console.log(yourAge);
-      // Exercise 2
+      // Exercise 2 Data types
       console.log(typeof firstName);
       console.log(typeof lastName);
       console.log(typeof isMarried);
       console.log(typeof country);
       console.log(typeof age);
-      // Exercise 3
+      // Exercise 3 String
       var company = "Integrify Academy";
       console.log(company); // a)
 
@@ -86,7 +84,7 @@
 
       console.log(company.repeat(5)); // t)
 
-      // Exercise 4
+      // Exercise 4 Boolean
       var x = 1;
       var y = 2;
       var z = "1";
@@ -99,7 +97,7 @@
       console.log(x === z);
       console.log(y < x);
 
-      // Exercise 5
+      // Exercise 5 Arithmetic operator
       let operandOne = 4;
       let operandTwo = 3;
 
@@ -109,18 +107,18 @@
       console.log(operandOne / operandTwo);
       console.log(operandOne % operandTwo);
 
-      /*operandOne++;
+      operandOne++;
       operandTwo++;
       console.log(operandOne);
-      console.log(operandTwo);*/
+      console.log(operandTwo);
 
       operandOne--;
       operandTwo--;
       console.log(operandOne);
       console.log(operandTwo);
 
-      // Exercise 6
-      /* console.log(4 > 3); // a) true
+      // Exercise 6 Comparison operator
+      console.log(4 > 3); // a) true
       console.log(4 >= 3); // b) true
       console.log(4 < 3); // c) false
       console.log(4 <= 3); // d) false
@@ -130,9 +128,9 @@
       console.log(4 !== 4); // h) false
       console.log(4 != "4"); // i) false
       console.log(4 == "4"); // j) true
-      console.log(4 === "4"); // k) false*/
+      console.log(4 === "4"); // k) false
 
-      // Exercise 7
+      // Exercise 7 Logical operator
       console.log(4 > 3 && 10 < 12); // a) true
       console.log(4 > 3 && 10 > 12); // b) false
       console.log(4 > 3 || 10 < 12); // c) true
@@ -144,14 +142,14 @@
       console.log(!(4 > 3 && 10 > 12)); // i) true
       console.log(!(4 === "4")); // j) true
 
-      // Exercise 8
-      //   var age = prompt("Enter your age:"); // a)
-      //   if (age >= 18) {
-      //     alert("You are old enough to drive.");
-      //   } else {
-      //     age = 18 - age;
-      //     alert("You are left with " + age + " years to drive.");
-      //   }
+      // Exercise 8 Conditional
+      var age = prompt("Enter your age:"); // a)
+      if (age >= 18) {
+        alert("You are old enough to drive.");
+      } else {
+        age = 18 - age;
+        alert("You are left with " + age + " years to drive.");
+      }
 
       var myAge = 30;
       var yourAge = prompt("Enter your age"); // b)
@@ -163,7 +161,7 @@
         alert("I am " + yourAge + " older than you.");
       }
 
-      // Exercise 9
+      // Exercise 9 Ternary operator
       let a = 4;
       let b = 3;
       if (a > b) {
