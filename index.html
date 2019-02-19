@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Practice</title>
+  </head>
+  <body>
+    <h1>JavaScript Practice</h1>
+    <script>
+      //   Exercise 1
+      //   var firstName = "Johanna";
+      //   var lastName = "Rousi";
+      //   var isMarried = true;
+      //   var country = "Finland";
+      //   var age = 30;
+      var firstName = "Johanna",
+        lastName = "Rousi",
+        isMarried = true,
+        country = "Finland",
+        age = 30;
+
+      myAge = "I am 30 years old.";
+      yourAge = "You are 25 years old.";
+
+      console.log(myAge);
+      console.log(yourAge);
+      // Exercise 2
+      console.log(typeof firstName);
+      console.log(typeof lastName);
+      console.log(typeof isMarried);
+      console.log(typeof country);
+      console.log(typeof age);
+      // Exercise 3
+      var company = "Integrify Academy";
+      console.log(company); // a)
+
+      console.log(company.length); // b)
+
+      console.log(firstName.toUpperCase()); // c)
+      console.log(lastName.toUpperCase());
+      console.log(country.toUpperCase());
+      console.log(company.toUpperCase());
+
+      console.log(firstName.toLowerCase()); // d)
+      console.log(lastName.toLowerCase());
+      console.log(country.toLowerCase());
+      console.log(company.toLowerCase());
+
+      console.log(company.slice(10)); // e)
+      console.log(company.substr(10));
+      console.log(company.substring(10));
+
+      console.log(company.includes("Academy")); // f)
+
+      console.log(company.split()); // g)
+
+      console.log(company.split(" ")); // h)
+
+      var companies = "Facebook, Google, Microsoft, Apple, IBM,Oracle, Amazon"; // i)
+      console.log(companies.split(","));
+
+      console.log(company.replace("Integrify", "Microsoft")); // j)
+
+      console.log(company.charAt(10)); // k)
+
+      console.log(company.charCodeAt(10)); // l)
+
+      console.log(company.indexOf("e")); // m)
+
+      console.log(company.lastIndexOf("e")); // n)
+
+      var companyTwo = " integrify academy "; // o)
+      console.log(companyTwo.trim());
+
+      console.log(company.startsWith("Integrify")); // p)
+
+      console.log(company.endsWith("y")); // q)
+
+      console.log(company.match(/a/gi)); // r)
+
+      var company1 = "Integrify "; // s)
+      var company2 = "Academy";
+      console.log(company1.concat(company2));
+
+      console.log(company.repeat(5)); // t)
+
+      // Exercise 4
+      var x = 1;
+      var y = 2;
+      var z = "1";
+
+      console.log(x == z); // a)
+      console.log(y > x);
+      console.log(y > x);
+
+      console.log(x == y); // b)
+      console.log(x === z);
+      console.log(y < x);
+
+      // Exercise 5
+      let operandOne = 4;
+      let operandTwo = 3;
+
+      console.log(operandOne + operandTwo);
+      console.log(operandOne - operandTwo);
+      console.log(operandOne * operandTwo);
+      console.log(operandOne / operandTwo);
+      console.log(operandOne % operandTwo);
+
+      /*operandOne++;
+      operandTwo++;
+      console.log(operandOne);
+      console.log(operandTwo);*/
+
+      operandOne--;
+      operandTwo--;
+      console.log(operandOne);
+      console.log(operandTwo);
+
+      // Exercise 6
+      /* console.log(4 > 3); // a) true
+      console.log(4 >= 3); // b) true
+      console.log(4 < 3); // c) false
+      console.log(4 <= 3); // d) false
+      console.log(4 == 4); // e) true
+      console.log(4 === 4); // f) true
+      console.log(4 != 4); // g) false
+      console.log(4 !== 4); // h) false
+      console.log(4 != "4"); // i) false
+      console.log(4 == "4"); // j) true
+      console.log(4 === "4"); // k) false*/
+
+      // Exercise 7
+      console.log(4 > 3 && 10 < 12); // a) true
+      console.log(4 > 3 && 10 > 12); // b) false
+      console.log(4 > 3 || 10 < 12); // c) true
+      console.log(4 > 3 || 10 > 12); // d) true
+      console.log(!(4 > 3)); // e) false
+      console.log(!(4 < 3)); // f) true
+      console.log(!false); // g) true
+      console.log(!(4 > 3 && 10 < 12)); // h) false
+      console.log(!(4 > 3 && 10 > 12)); // i) true
+      console.log(!(4 === "4")); // j) true
+
+      // Exercise 8
+      //   var age = prompt("Enter your age:"); // a)
+      //   if (age >= 18) {
+      //     alert("You are old enough to drive.");
+      //   } else {
+      //     age = 18 - age;
+      //     alert("You are left with " + age + " years to drive.");
+      //   }
+
+      var myAge = 30;
+      var yourAge = prompt("Enter your age"); // b)
+      if (yourAge > myAge) {
+        yourAge -= myAge;
+        alert("You are " + yourAge + " older than me.");
+      } else {
+        yourAge = myAge - yourAge;
+        alert("I am " + yourAge + " older than you.");
+      }
+
+      // Exercise 9
+      let a = 4;
+      let b = 3;
+      if (a > b) {
+        console.log(a + " is greater than " + b);
+      } else {
+        console.log("a is less than be");
+      }
+    </script>
+  </body>
+</html>
