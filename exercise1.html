@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Practice</title>
+  </head>
+  <body>
+    <h1>JavaScript Practice</h1>
+    <script>
+      //   Exercise 1 Variable
+
+      let firstName = "Johanna";
+      let lastName = "Rousi";
+      let isMarried = true;
+      let country = "Finland";
+      let age = 30;
+
+      myAge = 30;
+      yourAge = 25;
+
+      console.log(`I am ${myAge} years old.`);
+      console.log(`You are ${yourAge} years old.`);
+
+      // Exercise 2 Data types
+      console.log(typeof firstName);
+      console.log(typeof lastName);
+      console.log(typeof isMarried);
+      console.log(typeof country);
+      console.log(typeof age);
+      // Exercise 3 String
+      let company = "Integrify Academy"; // 1.
+      console.log(company); // 2.
+
+      console.log(company.length); // 3.
+
+      console.log(firstName.toUpperCase()); // 4.
+      console.log(lastName.toUpperCase());
+      console.log(country.toUpperCase());
+      console.log(company.toUpperCase());
+
+      console.log(firstName.toLowerCase()); // 5.
+      console.log(lastName.toLowerCase());
+      console.log(country.toLowerCase());
+      console.log(company.toLowerCase());
+
+      console.log(company.slice(10)); // 6.
+      console.log(company.substr(10));
+      console.log(company.substring(10));
+      //Use substr to slice out the phase because because because in the following sentence:
+      //'You cannot end a sentence with because because because is a conjunction'
+      let sentence =
+        "You cannot end a sentence with because because because is a conjunction";
+      let startIndex = sentence.indexOf("because");
+      let endIndex = sentence.lastIndexOf("because" + "because".length);
+      console.log(sentence.substring(startIndex, endIndex));
+      //lastIndexOf("because" + "because".length + 1)
+
+      console.log(company.includes("Academy")); // 8.
+
+      console.log(company.split()); // 9.
+
+      console.log(company.split(" ")); // 10.
+
+      var companies = "Facebook, Google, Microsoft, Apple, IBM,Oracle, Amazon"; // 11.
+      console.log(companies.split(","));
+
+      console.log(company.replace("Integrify", "Microsoft")); // 12.
+
+      console.log(company.charAt(10)); // 13.
+
+      console.log(company.charCodeAt(10)); // 14.
+
+      console.log(company.indexOf("c")); // 15.
+
+      console.log(company.lastIndexOf("c")); // 16.
+      // 17. 18. exercises of indexOf and lastIndexOf
+      let oneSentence = `You cannot end a sentence with because because because is a conjunction`; // 19.
+      console.log(oneSentence.search("because"));
+      var companyTwo = " integrify academy "; // 20.
+      console.log(companyTwo.trim());
+
+      console.log(company.startsWith("Integrify")); // 21.
+
+      console.log(company.endsWith("y")); // 22.
+
+      console.log(company.match(/a/gi)); // 23.
+
+      console.log(oneSentence.match(/because/gi)); // 24.
+
+      var company1 = "Integrify "; // 25.
+      var company2 = "Academy";
+      console.log(company1.concat(company2));
+
+      console.log(company.repeat(5)); // 26.
+      // 27.
+      const incomes = `'He earns 5000 euro from salary per mnth, 10000 euro annual bonus, 15000 euro online courses per month.`.split(
+        " "
+      );
+      const newNumbers = [];
+      for (let i = 0; i < incomes.length; i++) {
+        console.log(incomes[i]);
+        console.log(typeof incomes[i]);
+        console.log(parseFloat(incomes[i]));
+        // online 15000 kk
+        // salary 5000 kk
+        // bonus 10000 year
+        console.log(incomes);
+        if (parseFloat(incomes[i])) {
+          newNumbers.push(parseFloat(incomes[i]));
+        }
+      }
+      console.log(newNumbers);
+      const annualIncomes =
+        newNumbers[0] * 12 + newNumbers[1] + newNumbers[2] * 12;
+      console.log(annualIncomes);
+
+      let annualIncomeTwo;
+
+      for (let i = 0; i < newNumbers.length; i++) {
+        if (i === 0) {
+          annualIncomeTwo += newNumbers * 12;
+        } else if (i === 2) {
+          annualIncomeTwo += newNumbers * 12;
+        } else {
+          annualIncomeTwo += newNumbers[i];
+        }
+      }
+
+      // Exercise 4 Boolean
+      var x = 1;
+      var y = 2;
+      var z = "1";
+
+      console.log(x == z); // a)
+      console.log(y > x);
+      console.log(y > x);
+
+      console.log(x == y); // b)
+      console.log(x === z);
+      console.log(y < x);
+
+      // Exercise 5 Arithmetic operator
+      let operandOne = 4;
+      let operandTwo = 3;
+
+      console.log(operandOne + operandTwo);
+      console.log(operandOne - operandTwo);
+      console.log(operandOne * operandTwo);
+      console.log(operandOne / operandTwo);
+      console.log(operandOne % operandTwo);
+
+      // operandOne++;
+      // operandTwo++;
+      // console.log(operandOne);
+      // console.log(operandTwo);
+
+      operandOne--;
+      operandTwo--;
+      console.log(operandOne);
+      console.log(operandTwo);
+
+      // Exercise 6 Comparison operator
+      console.log(4 > 3); // a) true
+      console.log(4 >= 3); // b) true
+      console.log(4 < 3); // c) false
+      console.log(4 <= 3); // d) false
+      console.log(4 == 4); // e) true
+      console.log(4 === 4); // f) true
+      console.log(4 != 4); // g) false
+      console.log(4 !== 4); // h) false
+      console.log(4 != "4"); // i) false
+      console.log(4 == "4"); // j) true
+      console.log(4 === "4"); // k) false
+
+      // Exercise 7 Logical operator
+      console.log(4 > 3 && 10 < 12); // a) true
+      console.log(4 > 3 && 10 > 12); // b) false
+      console.log(4 > 3 || 10 < 12); // c) true
+      console.log(4 > 3 || 10 > 12); // d) true
+      console.log(!(4 > 3)); // e) false
+      console.log(!(4 < 3)); // f) true
+      console.log(!false); // g) true
+      console.log(!(4 > 3 && 10 < 12)); // h) false
+      console.log(!(4 > 3 && 10 > 12)); // i) true
+      console.log(!(4 === "4")); // j) true
+
+      // CONDITIONALS
+      // 1.
+      // var age = prompt("Enter your age:"); // a)
+      // if (age >= 18) {
+      //   alert("You are old enough to drive.");
+      // } else {
+      //   age = 18 - age;
+      //   alert("You are left with " + age + " years to drive.");
+      // }
+      // 2.
+      // var myAge = 30;
+      // var yourAge = prompt("Enter your age"); // b)
+      // if (yourAge > myAge) {
+      //   yourAge -= myAge;
+      //   alert("You are " + yourAge + " older than me.");
+      // } else {
+      //   yourAge = myAge - yourAge;
+      //   alert("I am " + yourAge + " older than you.");
+      // }
+      // 3.
+      let a = 4;
+      let b = 3;
+      if (a > b) {
+        console.log(a + " is greater than " + b);
+      } else {
+        console.log("a is less than be");
+      }
+      // OR shorter
+      a > b
+        ? console.log(a + " is greater than" + b)
+        : console.log(a + " is less than " + b);
+      // 4.
+      let scores = 74;
+      if (scores < 50) {
+        console.log("F");
+      } else if (scores < 60) {
+        console.log("D");
+      } else if (scores < 70) {
+        console.log("C");
+      } else if (scores < 80) {
+        console.log("B");
+      } else {
+        console.log("A");
+      }
+      // 5. this exercise is in functions too in exercise 14.
+
+      // ARRAYS
+      var emptyArray; // 1.
+      const someAnimals = ["cat", "dog", "horse", "cow", "mouse"]; // 2.
+      console.log(someAnimals.length); // 3.
+      console.log(someAnimals[0]); // 4.
+      console.log(someAnimals[someAnimals.length - 1]);
+      //  let middleIndexOfAnimals = Math.floor(someAnimals.length / 2);
+      // console.log(middleIndexOfAnimals);
+      // if (someAnimals.length % 2 === 0) {
+      // console.log((middleIndexOfAnimals - 1) + " and " + middleIndexOfAnimals)
+      // }
+      console.log(someAnimals[Math.floor(someAnimals.length / 2)]); // works with odd numbers;
+      const mixedDataTypes = ["plane", 3, true, false, 5, "bus"]; // 5.
+
+      // 6.
+      const itCompanies = [
+        "Facebook",
+        "Google",
+        "Microsoft",
+        "Apple",
+        "IBM",
+        "Oracle",
+        "Amazon"
+      ];
+      console.log(itCompanies); // 7.
+      console.log(itCompanies.length); // 8.
+      console.log(itCompanies[0]); // 9.
+      console.log(itCompanies[itCompanies.length - 1]);
+      console.log(itCompanies[Math.floor(itCompanies.length / 2)]);
+      console.log(itCompanies[0]); // 10.
+      console.log(itCompanies[1]);
+      console.log(itCompanies[2]);
+      console.log(itCompanies[3]);
+      console.log(itCompanies[4]);
+      console.log(itCompanies[5]);
+      console.log(itCompanies[6]);
+      // or shorter way
+      for (var i = 0; i < itCompanies.length; i++) {
+        console.log(itCompanies[i]);
+      }
+
+      console.log(itCompanies[0].toUpperCase()); // 11.
+      console.log(itCompanies[1].toUpperCase());
+      console.log(itCompanies[2].toUpperCase());
+      console.log(itCompanies[3].toUpperCase());
+      console.log(itCompanies[4].toUpperCase());
+      console.log(itCompanies[5].toUpperCase());
+      console.log(itCompanies[6].toUpperCase());
+      // or shorter way
+      for (var i = 0; i < itCompanies.length; i++) {
+        console.log(itCompanies[i].toUpperCase());
+      }
+      // 12.
+      // var newItCompanies = [
+      //   "Facebook",
+      //   "Google",
+      //   "Microsoft",
+      //   "Apple",
+      //   "IBM",
+      //   "Oracle",
+      //   " and Amazon are big IT companies."
+      // ];
+      // console.log(newItCompanies.toString());
+      // or
+      console.log(
+        `${itCompanies.slice(0, itCompanies.length - 2)} and ${
+          itCompanies[6]
+        } are big IT companies.`
+      );
+      // 13.
+      var i = "Apple";
+      if (itCompanies.includes(i) === true) {
+        console.log(i);
+      } else {
+        console.log("The company is not found");
+      }
+      // OR
+      if (itCompanies.indexOf(i) != -1) {
+        console.log(i);
+      } else {
+        console.log("The company is not found");
+      }
+      // 14. Arrays / Filter out companies which have more than two 'o' without the filter method
+      // These are not quite working, prints also Amazon
+      const theCompaniesTwo = [
+        "Facebook",
+        "Google",
+        "Microsoft",
+        "Apple",
+        "IBM",
+        "Oracle",
+        "Amazon"
+      ];
+      for (let i = 0; i < theCompaniesTwo.length; i++) {
+        if (
+          theCompaniesTwo[i].indexOf("o") != theCompaniesTwo[i].lastIndexOf("o")
+        ) {
+          console.log(theCompaniesTwo[i]);
+          // console.log("index of result " + theCompaniesTwo[i].indexOf("o"));
+          // console.log("last indez of result " + theCompaniesTwo[i].lastIndexOf("o"));
+        }
+      }
+
+      // console.log(itCompanies.sort()); // 15.
+
+      // 16. reverse array without reverse method
+      var reversedCompanies = [];
+      for (var i = theCompaniesTwo.length - 1; i >= 0; i--) {
+        reversedCompanies.push(theCompaniesTwo[i]);
+      }
+      console.log(reversedCompanies);
+
+      // console.log(itCompanies.reverse()); // 17.
+      // 18.
+      const theCompanies = [
+        "Facebook",
+        "Google",
+        "Microsoft",
+        "Apple",
+        "IBM",
+        "Oracle",
+        "Amazon"
+      ];
+      var newTheCompanies = theCompanies.slice(0, 3);
+      console.log(newTheCompanies);
+
+      console.log(theCompanies.slice(-3)); // 19.
+      // 20. slice out middle company or companies
+      var middleIndex = Math.floor(theCompanies.length / 2);
+      if (theCompanies.length % 2 === 0) {
+        console.log(
+          "middle companies array length is even: " +
+            theCompanies[middleIndex - 1] +
+            " and " +
+            theCompanies[middleIndex]
+        );
+      } else {
+        console.log(
+          "middle company when array length is odd: " +
+            theCompanies[middleIndex]
+        );
+      }
+      // var midCompanies = theCompanies[(0 + (theCompanies.length - 1 - 0)) / 2];
+      // console.log(midCompanies); this does not work with even amount of items in array
+
+      // theCompanies.shift(); // 21.
+      // console.log(theCompanies);
+
+      // 22.
+      if (theCompanies.length % 2 === 0) {
+        theCompanies.splice(middleIndex - 1, 2);
+        console.log(theCompanies);
+      } else {
+        theCompanies.splice(middleIndex, 1);
+        console.log(theCompanies);
+      }
+
+      // theCompanies.pop(); // 23.
+      // console.log(theCompanies);
+
+      // var allRemuved = theCompanies.splice(); // 24. Remove all IT companies
+      // console.log(allRemuved);
+
+      // Exercise 11 Loops
+      // 1.
+      // for loop
+      for (i = 0; i <= 10; i++) {
+        console.log(i);
+      }
+      // while loop
+      var i = 0;
+      while (i <= 10) {
+        console.log(i);
+        i++;
+      }
+      // do while loop
+      var i = 0;
+      do {
+        console.log(i);
+        i++;
+      } while (i <= 10);
+      // 2.
+      // for loop reverse order
+      for (i = 10; i >= 0; i--) {
+        console.log(i);
+      }
+      // while loop
+      var i = 10;
+      while (i >= 0) {
+        console.log(i);
+        i--;
+      }
+      // while do
+      var i = 10;
+      do {
+        console.log(i);
+        i--;
+      } while (i >= 0);
+      // 3.
+      let hashes = "";
+      for (let i = 0; i < 7; i++) {
+        hashes += "#";
+        console.log(hashes);
+      }
+      // 4.
+      const skills = ["HTML", "CSS", "JavaScript"];
+      for (var i = 0; i < skills.length; i++) {
+        console.log(skills[i]);
+      }
+      // 7.
+      var sum = 0;
+      for (var i = 0; i <= 100; i++) {
+        sum = sum + i;
+      }
+      console.log(sum);
+      // 8.
+      var sumEvens = 0;
+
+      for (var i = 0; i <= 100; i++) {
+        if (i % 2 === 0) {
+          sumEvens = sumEvens + i;
+        }
+      }
+      console.log(sumEvens);
+      // 9.
+      var sumOdds = 0;
+
+      for (var i = 0; i <= 100; i++) {
+        if (i % 2 != 0) {
+          sumOdds = sumOdds + i;
+        }
+      }
+      console.log(sumOdds);
+
+      // 5.
+      var numbers = [1, 2, 3, 4, 5];
+
+      function summaryValues(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+          sum = sum + numbers[i];
+        }
+        return sum;
+      }
+      console.log(summaryValues(numbers));
+
+      // Exercise 12 Functions
+      // 1.
+      // function fullName() {
+      //   return firstName + " " + lastName;
+      // }
+      // console.log(fullName());
+      // 2.
+      function fullName(myFirstName, myLastName) {
+        return `${myFirstName} ${myLastName}`;
+      }
+      console.log(fullName("Johanna", "Rousi"));
+      // 3.
+      function addNumbers(a, b) {
+        return a + b;
+      }
+      console.log(addNumbers(3, 7));
+
+      // 4.
+      function areaOfRectangle(lenght, width) {
+        var area = lenght * width;
+        return area;
+      }
+      console.log(areaOfRectangle(10, 12));
+      // 5.
+      function perimeterOfRectangle(lenght, width) {
+        var perimeter = 2 * (lenght + width);
+        return perimeter;
+      }
+      console.log(perimeterOfRectangle(10, 12));
+      // 6.
+      function volumeOfRectPrism(length, width, height) {
+        var volume = length * width * height;
+        return volume;
+      }
+      console.log(volumeOfRectPrism(10, 12, 15));
+      // 7.
+      function areaOfCircle(r) {
+        var circleArea = Math.PI * r * r;
+        console.log(circleArea);
+      }
+      areaOfCircle(5);
+      // 8.
+      function circumOfCircle(r) {
+        circumference = 2 * 3.1459 * r;
+        console.log(circumference);
+      }
+      circumOfCircle(5);
+      // 9.
+      function density(mass, volume) {
+        var division = mass / volume;
+        return division;
+      }
+      console.log(density(100, 30));
+      // 10.
+      function speedCalculator(km, h) {
+        var v = km / h;
+        console.log(v + "km/h");
+      }
+      speedCalculator(50, 0.5);
+      // 11.
+      function weight(mass, gravity) {
+        var result = mass * gravity;
+        return result;
+      }
+      console.log(weight(50, 81));
+      // 12.
+      function convertCelciusToFahrenheit(c) {
+        var degree = (c * 9) / 5 + 32;
+        console.log(degree + "°F");
+      }
+      convertCelciusToFahrenheit(5);
+      // 13.
+      function bodyMassIndex(weight, height) {
+        var bmi = weight / height ** 2;
+        if (bmi < 18.5) {
+          console.log("Underweight");
+        } else if (bmi >= 18.5 && bmi < 25) {
+          console.log("Normal weight");
+        } else if (bmi >= 25 && bmi < 30) {
+          console.log("Overweight");
+        } else {
+          console.log("Obese");
+        }
+      }
+      bodyMassIndex(100, 1.7);
+      // 14 Write a function called checkSeason, it takes a month parameter
+      //and returns the season:Autumn, Winter, Spring or Summer
+      function checkSeason(month) {
+        switch (month) {
+          case "September":
+          case "October":
+          case "November":
+            return "Autumn";
+            break;
+          case "December":
+          case "January":
+          case "February":
+            return "Winter";
+            break;
+          case "March":
+          case "April":
+          case "May":
+            return "Spring";
+            break;
+          case "June":
+          case "July":
+          case "August":
+            return "Summer";
+            break;
+        }
+      }
+      console.log(checkSeason("April"));
+      // 15
+      function findMax(num1, num2, num3) {
+        return Math.max(num1, num2, num3);
+      }
+      console.log(findMax(0, 10, 5));
+      console.log(findMax(0, -10, -2));
+      // 16. Linear equation
+      function solvLinEquation(a, b, y) {
+        var x = (y - b) / a;
+        return x;
+      }
+      console.log(solvLinEquation(2, 4, 6));
+      // 17. Quadratic equation
+      function solvQuadEquation(a, b, c, y) {
+        var x = (y - c) / (2 * a + b);
+        return x;
+      }
+      console.log(solvQuadEquation(1, 2, 3, 4));
+
+      // 18.
+      function printArray(arr) {
+        return arr;
+      }
+      console.log(printArray(itCompanies));
+      // 19. This function swaps value of x to y.
+      function swapValues(x, y) {}
+      // swapValues(3,4); // x => 4, y=>3
+      // swapValues(4,5); // x = 5, y = 4
+      // 20.
+      function reverseArray(arr) {
+        var newArray = [];
+        for (var i = arr.length - 1; i >= 0; i--) {
+          newArray.push(arr[i]);
+        }
+        return newArray;
+      }
+      console.log(reverseArray(itCompanies));
+      // 21.
+      var peoplesNames = ["Johanna", "Irene", "Erik", "John", "Alisa", "Alex"];
+
+      function capitalizeArray(anyArray) {
+        for (var j = 0; j < anyArray.length; j++) {
+          console.log(anyArray[j].toUpperCase());
+        }
+      }
+      capitalizeArray(peoplesNames);
+      // 22.
+      var firstEmptyArray = [];
+      console.log(firstEmptyArray);
+      function addItem(item) {
+        firstEmptyArray.push(item);
+        return firstEmptyArray;
+      }
+      console.log(addItem("Hello"));
+      console.log(addItem("World"));
+      // 23.
+      function removeItem(i) {
+        var someNums = [1, 3, 9, 6, 8, 5];
+        someNums.splice(i, 1);
+        console.log(someNums);
+      }
+      removeItem(3);
+      // 24.
+      function sumOfNumbers(num) {
+        sum = 0;
+        for (var i = 0; i <= num; i++) {
+          sum = sum + i;
+        }
+        return sum;
+      }
+      console.log(sumOfNumbers(4));
+      // 25.
+      function sumOfOdds2(num) {
+        var sum = 0;
+        for (var i = 0; i <= num; i++) {
+          if (i % 2 !== 0) {
+            sum = sum + i;
+          }
+        }
+        console.log(sum);
+      }
+      sumOfOdds2(5);
+      // 26.
+      function sumOfEvens2(num) {
+        var sum = 0;
+        for (var i = 0; i <= num; i++) {
+          if (i % 2 === 0) {
+            sum = sum + i;
+          }
+        }
+        return sum;
+      }
+      console.log(sumOfEvens2(6));
+      // 27.
+      function evensAndOdds(num) {
+        // var amountEvens = 0;
+        // var amountOdds = 0;
+        for (var i = 0; i <= num; i++) {
+          if (i % 2 === 0) {
+            var amountEvens = i / 2 + 1;
+          } else {
+            var amountOdds = i / 2 + 0.5;
+          }
+        }
+        return `The number of odds are ${amountEvens}.\nThe number of evens are ${amountOdds}.`;
+      }
+      console.log(evensAndOdds(7));
+      // 28. funcition which takes any number of arguments and return the sum of the arguments
+      function sumOfAllNumbers() {
+        s = 0;
+        for (i = 0; i < arguments.length; i++) {
+          s = s + arguments[i];
+        }
+        return s;
+      }
+      console.log(sumOfAllNumbers(3, 4, 6, 8));
+      // 29. Declare a function name randomHexaNumberGenerator. When this function is called it generates a random hexadecimal number.
+      function randomHexaNumberGenerator() {
+        var decimal = Math.random().toString(16);
+        return "#" + decimal.slice(2, 8);
+      }
+      console.log(randomHexaNumberGenerator());
+      // 30. Declare a function name userIdGenerator. When this function is called it generates seven character id.
+      function userIdGenerator() {
+        var text = "";
+        var possible =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 7; i++) {
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return console.log(text);
+      }
+      userIdGenerator();
+      // 31. userIdGeneratedByUser
+      // function userIdGeneratedByUser() {
+      //   var numberOfCharacters = prompt(
+      //     "How many characters do you want to have in the id?"
+      //   );
+      //   var numberOfIds = prompt("How many ids do you want?");
+      //   for (var j = 0; j < numberOfIds; j++) {
+      //     var text = "";
+      //     var possible =
+      //       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      //     for (var i = 0; i < numberOfCharacters; i++) {
+      //       text += possible.charAt(
+      //         Math.floor(Math.random() * possible.length)
+      //       );
+      //     }
+
+      //     console.log(text);
+      //   }
+      // }
+      // userIdGeneratedByUser();
+
+      // 30. Write a function name rgbColorGenerator and it generates rgb colors.
+      function rgbColorGenerator() {
+        var red = Math.floor(Math.random() * 255).toString();
+        var blue = Math.floor(Math.random() * 255).toString();
+        var green = Math.floor(Math.random() * 255).toString();
+        return `rgb(${red}, ${blue}, ${green})`;
+      }
+      console.log(rgbColorGenerator());
+      // 31. Use the new Date() object to get month, date, year, hour and minute.
+      function setTheTime() {
+        var d = new Date(2019, 1, 25, 11, 27);
+        return d;
+      }
+      console.log(setTheTime());
+      // 36. Write a function name displayDateTime which display time in this format:
+      //28/08/2018 04:08
+      function displayDateTime() {
+        var d = new Date();
+        var d = new Date();
+        var n = d.toLocaleDateString();
+        var m = d.toLocaleTimeString();
+        var o = m.slice(0, 5);
+
+        return n + " " + o;
+      }
+      console.log(displayDateTime());
+      // 33. Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+      function shuffleArray(array) {
+        var resultArray = "";
+
+        for (var i = 0; i < array.length; i++) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var item = array[i];
+          array[i] = array[j];
+          array[j] = item;
+        }
+        return array;
+      }
+      console.log(shuffleArray(peoplesNames));
+      // 34. Call your function factorial, it takes a whole number as a parameter and it returns a factorial of the number
+      function factorial(num) {
+        if (num === 0 || num === 1) {
+          return 1;
+        }
+        for (i = num - 1; i >= 1; i--) {
+          num = num * i;
+        }
+        return num;
+      }
+      console.log(factorial(5));
+      // 35.
+      //Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+      var birds = "";
+      var balloons;
+      function isEmpty(data) {
+        if (typeof data == "number" || typeof data == "boolean") {
+          return false;
+        }
+        if (typeof data == "undefined" || typeof data === null) {
+          return true;
+        }
+        if (typeof data.length != "undefined") {
+          return "data.length == 0";
+        }
+        var count = 0;
+        for (var i in data) {
+          if (data.hasOwnProperty(i)) {
+            count++;
+          }
+        }
+        return count == 0;
+      }
+      console.log(isEmpty(balloons));
+      // 36.
+
+      // 37. Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items.
+      //Check if all the array items are number types. If not give return reasonable feedback.
+      var queueOfNumbers = [1, 2, 3, 4];
+      var numbersAndLetters = ["T", 4, "Y", 2];
+      function sumOfArrayItems(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+          sum = sum + arr[i];
+        }
+        if (typeof sum == "number") return sum;
+        if (typeof sum != "number")
+          return "The array does not have  only numbers.";
+      }
+      console.log(sumOfArrayItems(queueOfNumbers));
+      // 38. Write a function called average, it takes an array parameter and returns the
+      //average the items. Check if all the array items are number types. If not give return
+      //reasonable feedback.
+      function average(arr) {
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+          sum = sum + arr[i];
+        }
+        if (typeof sum == "number") return sum / arr.length;
+        if (typeof sum != "number")
+          return "The array does not have  only numbers.";
+      }
+      console.log(average(numbersAndLetters));
+      console.log(average(queueOfNumbers));
+      // 39. Modify Array
+      function modifyArray(arr) {
+        if (typeof arr[4] == "undefined") {
+          return "not found";
+        } else {
+          let item = arr[4].toUpperCase();
+          let modifiedArr = arr.splice(4, 1, item);
+
+          if (typeof arr[4] != "undefined") return arr;
+        }
+      }
+      const plants = ["tree", "flower", "bush"];
+      console.log(modifyArray(peoplesNames));
+      console.log(modifyArray(plants));
+      // 40.Call your function sum, it takes any number of arguments and it returns the sum.
+      let theSumOfAnyNumbers = function() {
+        let sum = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          sum = sum + arguments[i];
+        }
+        return sum;
+      };
+
+      console.log(theSumOfAnyNumbers(1, 5, 8, 3));
+
+      // 41. Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+
+      // 42. Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+      // 43. Write a function called modifyArray takes array as parameter and modifies the fifth item of the array and return the array. If the array length is less than five it return 'item not found'.
+      // console.log(modifyArray(["Avocado", "Tomato", "Potato","Mango", "Lemon","Carrot"]);
+      // // →["Avocado", "Tomato", "Potato","Mango", "LEMON", "Carrot"]
+      // console.log(modifyArray(["Google", "Facebook","Apple", "Amazon","Microsoft",  "IBM"]);
+      // // →["Google", "Facebook","Apple", "Amazon","MICROSOFT",  "IBM"]
+      // console.log(modifyArray(["Google", "Facebook","Apple", "Amazon"]);
+      // // →"Not Found"
+      // 44. Write a function called *isPrime, which checks if a number is prime number.
+      // 45. Write a functions which checks if all items are unique in the array.
+      // 46. Write a function which checks if all the itmes of the array are the same data type.
+      function checkIfSameDatatype(arr) {}
+      // 47. Write a function which returns array of seven unique random numbers
+      function sevenRandomNumbers() {
+        const randomSeven = [];
+        while (randomSeven.length < 7) {
+          let number = Math.floor(Math.random() * 10);
+          if (randomSeven.indexOf(number) === -1) {
+            randomSeven.push(number);
+          }
+        }
+        return randomSeven;
+      }
+
+      console.log(sevenRandomNumbers());
+    </script>
+  </body>
+</html>

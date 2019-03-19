@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript Exrcise 3</title>
+  </head>
+  <body>
+    <p>First Paragraph</p>
+    <p>Second Paragradph</p>
+    <p>Third Paragraph</p>
+    <p></p>
+    <script src="countries.js"></script>
+    <script>
+      // 1.
+      console.log(document.querySelector("p"));
+      // 2.
+      //   let firstPara = document.querySelector("#first-para");
+      //   console.log(firstPara);
+      // 3.
+      let allParas = document.querySelectorAll("p");
+      console.log(allParas);
+      // 4. Loop through the nodeList and get the text content of each paragra
+      allParas.forEach(para => {
+        console.log(para.textContent);
+      });
+      // 6. Set id and class attribute for all the paragraphs using different attribute setting methods
+      allParas[0].setAttribute("id", "first-para");
+      allParas[1].setAttribute("id", "second-para");
+      allParas[2].id = "third-para";
+      allParas[3].id = "fourth-para";
+
+      allParas[0].setAttribute("class", "para");
+      allParas[1].setAttribute("class", "para");
+      allParas[2].className = "para";
+      allParas[3].className = "para";
+      console.log(allParas);
+      // 5. Set a text content to paragraph the fourth paragraph,Fourth Paragraph
+      let fourthPara = document.querySelector("#fourth-para");
+      fourthPara.textContent = "Fourth Paragraph";
+      console.log(fourthPara);
+      // 7. color, background, border, font-size, font-famil)
+      //   allParas[0].style.color = "red";
+      //   allParas[1].style.backgroundColor = "blue";
+      //   allParas[2].style.border = "2px solid green";
+      //   allParas[3].style.fontSize = "30px";
+      // 8. Select all paragraphs and loop through each elements and give the first and third
+      // paragraph a color of blue, and the second and the fourth paragraph a red color
+      allParas.forEach((para, i) => {
+        if (i % 2 === 0) {
+          para.style.color = "blue";
+        } else {
+          para.style.color = "red";
+        }
+      });
+      // 9.
+      //remuve paragraphs
+      let firstPara = document.querySelector("p");
+      let secondPara = document.querySelector("#second-para");
+      let thirdPara = document.querySelector("#third-para");
+
+      firstPara.remove();
+      secondPara.remove();
+      thirdPara.remove();
+      fourthPara.remove();
+      // 10. create them again and set text content, id and class to each paragraph
+      let paraOne = document.createElement("p");
+      paraOne.textContent = "First Paragraph";
+      paraOne.id = "first-para";
+      paraOne.className = "para";
+      document.body.appendChild(paraOne);
+      let paraTwo = document.createElement("p");
+      paraTwo.textContent = "Second Paragraph";
+      paraTwo.id = "second-para";
+      paraTwo.className = "para";
+      document.body.appendChild(paraTwo);
+      let paraThree = document.createElement("p");
+      paraThree.textContent = "Third Paragraph";
+      paraThree.id = "third-para";
+      paraThree.className = "para";
+      document.body.appendChild(paraThree);
+      let paraFour = document.createElement("p");
+      paraFour.textContent = "Fourth Paragraph";
+      paraFour.id = "fourth-para";
+      paraFour.className = "para";
+      document.body.appendChild(paraFour);
+      // 11. Create a div container on HTML document and create 100 numbers dynamically
+      // and append to the container div. Put each number in 150px by 150px box.
+      // If the number is even the background will be lightgreen else lightblue.
+      const container = document.createElement("div");
+      console.log(container);
+      container.setAttribute("class", "container");
+      container.style.display = "flex";
+      container.style.flexWrap = "wrap";
+      document.body.appendChild(container);
+      let box;
+      //   for (let i = 0; i < 101; i++) {
+      //     box = document.createElement("div");
+      //     box.textContent = i;
+      //     box.style.width = "150px";
+      //     box.style.height = "150px";
+      //     if (i % 2 === 0) {
+      //       box.style.backgroundColor = "lightgreen";
+      //     } else {
+      //       box.style.backgroundColor = "lightblue";
+      //     }
+      //     container.appendChild(box);
+      //   }
+      // 12. Use the rgb color generator function or hexaColor generator to create 10 divs
+      // with random background colors
+      const rgbColorGenerator = function() {
+        var red = Math.floor(Math.random() * 255).toString();
+        var blue = Math.floor(Math.random() * 255).toString();
+        var green = Math.floor(Math.random() * 255).toString();
+        return `rgb(${red}, ${blue}, ${green})`;
+      };
+
+      for (let i = 0; i < 11; i++) {
+        box = document.createElement("div");
+        box.style.backgroundColor = rgbColorGenerator();
+        box.style.width = "150px";
+        box.style.height = "150px";
+        container.appendChild(box);
+      }
+      // 13.
+      // Use the countries.js to visualize all the countries on the HTML document.
+      // You need one wrapper div and box for each countries. In the box display,
+      // the letter the country starts with, the name of the country and the number
+      // of characters for the country name.
+      console.log(countriesAll);
+      const container2 = document.createElement("div");
+
+      container2.setAttribute("class", "container");
+      container2.style.display = "flex";
+      container2.style.flexWrap = "wrap";
+      document.body.appendChild(container2);
+      let box2;
+
+      countriesAll.forEach((country, i) => {
+        text1 = country[0];
+        text2 = country;
+        text3 = country.length;
+        box2 = document.createElement("div");
+        box2.style.width = "80px";
+        box2.style.height = "80px";
+        box2.style.border = "solid 2px black";
+        box2.textContent = `${text1} ${text2} ${text3}`;
+        container2.appendChild(box2);
+      });
+    </script>
+  </body>
+</html>
