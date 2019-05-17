@@ -119,23 +119,41 @@ const users = {
 
 const countUsers = () => {
   let count = 0;
-  for (let usersLoggedIn in users) {
-    if (users.hasOwnProperty("isLoggedIn")) {
-      // console.log(isLoggedIn);
-      if (isLoggedIn === "true") {
-        count = count + 1;
-      }
+  for (let user in users) {
+    if (users[user]["isLoggedIn"] === true) {
+      count++;
     }
   }
   return count;
 };
 
 console.log(countUsers());
+// users with 50 or more points
+const moreThanFifty = () => {
+  let count = 0;
+  for (let user in users) {
+    if (users[user]["points"] >= 50) {
+      count++;
+    }
+  }
+  return count;
+};
+console.log(moreThanFifty());
+
 // FUNCTIONAL PROGRAMMING
 // 1. Explain the difference between forEach, map, filter, and reduce.
 // forEach loops through the items of an array like for loop, map makes a new array based on the condition inside the function but doesn't remove anything,
 // filter makes a new array and filters the items throug a condition, reduce sums up the values in an array
-// 2. Use forEach to console.log each country in the countries array.
+// 2. ?? Define a call function before you them in forEach, map, filter or reduce.
+function square(x) {
+  return x * x;
+}
+const sideLengths = [1, 2, 3, 4];
+const SQUARES = sideLengths.map(side => {
+  square();
+});
+console.log(SQUARES);
+// 3. Use forEach to console.log each country in the countries array.
 const countries = [
   "Estonia",
   "Finland",
@@ -147,49 +165,51 @@ const countries = [
 countries.forEach(country => {
   console.log(country);
 });
-// 3. Use forEach to console.log each name in the names array.
+// 4. Use forEach to console.log each name in the names array.
 const names = ["Asabeneh", "Mathias", "Elias", "Brook"];
 names.forEach(name => {
   console.log(name);
 });
-// 4.
+// 5.
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 numbers.forEach(number => {
   console.log(number);
 });
-// 5. Use map to create a new array by changing each country to uppercase in the countries array;
+// 6. Use map to create a new array by changing each country to uppercase in the countries array;
 const upperCaseCountries = countries.map(country => country.toUpperCase());
 
 console.log(upperCaseCountries);
-// 6. Use map to create a new array by changing each number to square in the numbers array
+// 7. Use map to create a new array by changing each number to square in the numbers array
 const squareNumbers = numbers.map(number => number ** 2);
 console.log(squareNumbers);
-// 7. Use map to change to each name to uppercase in the names array
+// 8. Use map to change to each name to uppercase in the names array
 const upperCaseNames = names.map(name => name.toUpperCase());
 console.log(upperCaseNames);
-// 8. Use filter to filter out countries containing land.
+// 9. Use filter to filter out countries containing land.
 const countriesWithLand = countries.filter(country => country.includes("land"));
 console.log(countriesWithLand);
-// 9.
+// 10.
 const countriesWithSixLetters = countries.filter(
   country => country.length === 6
 );
 console.log(countriesWithSixLetters);
-// 10. same
-// 11.
+// 11. Use filter to filter out countries containing six letters and more in the counntry array.
+const countriesWithMoreThanSix = countries.filter(
+  country => country.length >= 6
+);
+console.log(countriesWithMoreThanSix);
+// 12.
 const countriesStartWithE = countries.filter(country => country[0] === "E");
 console.log(countriesStartWithE);
-// 12.
-function getString(arr) {
-  const stringsInArray = arr.filter(element => typeof element === "string");
-  return stringsInArray;
-}
-const mixed = ["Laura", 0, true, "banana"];
-console.log(getString(mixed));
-// 13.
+// 13. Chain two or more array iterators(eg. arr.map(callback).filter(callback).reduce(callback))
+
+// 14.Declare a function called getStringLists which takes an array as a parameter and then returns
+// an array only with string items.
+
+// 15. Use reduce to sum all the numbers in the numbers array.
 let sum = numbers.reduce((accum, curr) => accum + curr);
 console.log(sum);
-// 14.
+// 16.Use reduce to concatinate all the countries and to produce this sentence:
 //Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries
 let countriesParagraph =
   countries
@@ -197,37 +217,41 @@ let countriesParagraph =
     .reduce((accum, curr) => accum + ", " + curr) +
   " and Iceland are north European countries.";
 console.log(countriesParagraph);
-// 15. Explain the difference between some and every
+// 17. Explain the difference between some and every
 // some checks if the condition is true in some of the items of the array and
 // every checks if the condition is true in every item of the array
-// 16.
+// 18. Use some to check if some names' length greater than seven in names array
 console.log(names.some(name => name.length > 7));
-// 17.
+// 19. Use every to check if all the countries contain the word land
 console.log(countries.every(country => country.includes("land")));
-// 18. Explain the difference between find and findIndex.
+// 20. Explain the difference between find and findIndex.
 // find returns the first item of an array that fills the condition, findIndex returns the index of the first item
 // that fills the condition
-// 19.
+// 21. Use find to find the first country containing only six letters in the countries array
 console.log(countries.find(country => country.length === 6));
-// 20.
+// 22. Use findIndex to find the position of the first country containing only six letters in the countries array
 console.log(countries.findIndex(country => country.length === 6));
-// 21. Declare a function called categorizeCountries which returns an array of countries which have some common pattern(you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
+// 23. Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.
+console.log(countries.findIndex(country => country.includes("Norway")));
+// 24. Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.
+console.log(countries.findIndex(country => country.includes("Russia")));
+// 25. Declare a function called categorizeCountries which returns an array of countries which have some common pattern
+// (you find the countries array in this repository as countries.js(eg 'land', 'ia', 'island','stan')).
 function categorizeCountries(pattern) {
   return countriesAll.filter(country => country.includes(pattern));
 }
 console.log(categorizeCountries("ia"));
 console.log(categorizeCountries("stan"));
 console.log(categorizeCountries("land"));
-
-// 22. ???? Create a function which return an array of objects, which is the
-//letter and the number of times the letter use to start with a name of a country.
-
-// 23. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional programming to work on the countries.js array
+// 26. Create a function which return an array of objects, which is the letter and the number of times the letter use
+// to start with a name of a country.
+// 27. Declare a getFirstTenCountries function and return an array of ten countries. Use different functional
+// programming to work on the countries.js array
 function getFirstTenCountries() {
   return countriesAll.filter(country => countriesAll.indexOf(country) < 10);
 }
 console.log(getFirstTenCountries());
-// 24. Declare a getLastTenCountries function which takes the last ten countries
+// 28. Declare a getLastTenCountries function which which returns the last ten countries in the countries array.
 function getLastTenCountries() {
   return countriesAll.filter(
     country => countriesAll.indexOf(country) > countriesAll.length - 11
@@ -236,5 +260,12 @@ function getLastTenCountries() {
 console.log(getLastTenCountries());
 // or
 console.log(countriesAll.slice(countriesAll.length - 10));
-// 25. ??? Find out with which letter are there many countries
-// 26.
+// 29. Find out which letter is used many times as intial for a country name from the conuntries array (eg. Finland, Fiji, France etc)
+
+// random
+function getString(arr) {
+  const stringsInArray = arr.filter(element => typeof element === "string");
+  return stringsInArray;
+}
+const mixed = ["Laura", 0, true, "banana"];
+console.log(getString(mixed));
